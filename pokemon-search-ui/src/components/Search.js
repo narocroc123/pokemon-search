@@ -48,7 +48,6 @@ const Search = () => {
       setSearchData("");
     } else {
       alert("This search needs to be for a valid Pokemon");
-      setSearchData("");
     }
   };
 

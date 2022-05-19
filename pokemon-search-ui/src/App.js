@@ -27,22 +27,16 @@ const HistoryContainer = styled.div`
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Title>Pokemon Search</Title>
-      </header>
-      <section className="App-search">
-        <Search />
-      </section>
-      <section className="App-details-history">
-        <DetailsContainer>
-          <Details />
-        </DetailsContainer>
-        <HistoryContainer>
-          <History />
-        </HistoryContainer>
-      </section>
-    </div>
+    <>
+      <Title>Pokemon Search</Title>
+      <Search />
+      <DetailsContainer>
+        <Details />
+      </DetailsContainer>
+      <HistoryContainer>
+        <History />
+      </HistoryContainer>
+    </>
   );
 };
 
