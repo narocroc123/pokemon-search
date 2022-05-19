@@ -12,13 +12,17 @@ const Title = styled.h1`
 `;
 
 const DetailsContainer = styled.div`
+  display: inherit;
   float: left;
   margin: 20px;
+  width: 60%;
 `;
 
 const HistoryContainer = styled.div`
+  display: inherit;
   float: right;
   margin: 20px;
+  width: auto;
 `;
 
 const App = () => {
