@@ -1,12 +1,14 @@
 const pokemonDescription = (data) => {
+  const descriptionFormatting = (description) => {
+    return description.replace(/(\r\n|\n|\r|\f)/gm, " ");
+  };
   for (const item of data) {
     if (item.language.name === "en") {
-      const unformattedDescription = item.flavor_text;
-      const formattedDescription = unformattedDescription.replace(
-        /(\r\n|\n|\r|\f)/gm,
-        " "
-      );
-      return formattedDescription;
+      const description = descriptionFormatting(item.flavor_text);
+      return description;
+    } else {
+      const description = descriptionFormatting(item.flavor_text);
+      return description;
     }
   }
 };
@@ -22,4 +24,5 @@ const formatSearchResult = (data) => {
 
 export default {
   formatSearchResult,
+  pokemonDescription,
 };
