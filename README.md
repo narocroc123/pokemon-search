@@ -1,5 +1,5 @@
 # pokemon-search
-Frontend and backend applications for searching pokemon data using the PokeAPI.
+Frontend and backend services for an application that searches pokemon data using the PokeAPI.
 
 ## How to run the application
 Ensure `node` and `yarn` are installed on your local machine using the following guides:
