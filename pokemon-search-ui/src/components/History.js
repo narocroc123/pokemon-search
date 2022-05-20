@@ -23,7 +23,7 @@ const History = () => {
   const historyResults = useSelector((state) => state.history);
 
   const formattedResults =
-    historyResults.length >= 5
+    historyResults.length > 4
       ? historyResults.slice(historyResults.length - 5, historyResults.length)
       : historyResults;
 
