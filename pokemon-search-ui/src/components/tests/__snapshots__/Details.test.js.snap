@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App render to match snapshot 1`] = `
+<DocumentFragment>
+  <h1
+    class="sc-bczRLJ bTRrLY"
+  >
+    CHARIZARD
+  </h1>
+  <h3
+    class="sc-gsnTZi iTPgsc"
+  >
+    Legendary!
+  </h3>
+  <p>
+    Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.
+  </p>
+</DocumentFragment>
+`;

@@ -31,9 +31,9 @@ describe("App", () => {
     render(component);
   });
 
-  // test("renders history button", () => {
-  //   const { getByText } = render(component);
+  test("render to match snapshot", () => {
+    const { asFragment } = render(component);
 
-  //   expect(getByText("pikachu")).toBeInTheDocument();
-  // });
+    expect(asFragment(component)).toMatchSnapshot();
+  });
 });

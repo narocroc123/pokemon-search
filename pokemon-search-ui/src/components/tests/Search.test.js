@@ -26,8 +26,15 @@ describe("App", () => {
       <Search />
     </Provider>
   );
+
   test("renders App component", () => {
     render(component);
+  });
+
+  test("render to match snapshot", () => {
+    const { asFragment } = render(component);
+
+    expect(asFragment(component)).toMatchSnapshot();
   });
 
   test("renders contains search button", () => {

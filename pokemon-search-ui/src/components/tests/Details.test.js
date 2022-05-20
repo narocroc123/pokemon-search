@@ -31,6 +31,12 @@ describe("App", () => {
     render(component);
   });
 
+  test("render to match snapshot", () => {
+    const { asFragment } = render(component);
+
+    expect(asFragment(component)).toMatchSnapshot();
+  });
+
   test("contains pokemon name", () => {
     const { getByText } = render(component);
 

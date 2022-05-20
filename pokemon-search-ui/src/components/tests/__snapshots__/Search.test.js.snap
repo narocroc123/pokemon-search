@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App render to match snapshot 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-bczRLJ iNhTgm"
+  >
+    <input
+      class="sc-gsnTZi vgHnQ"
+      id="search"
+      name="search"
+      placeholder="Search Pokemon....."
+      required=""
+      type="text"
+      value=""
+    />
+    <button
+      class="sc-dkzDqf bdGbai"
+    >
+      Submit
+    </button>
+  </form>
+</DocumentFragment>
+`;
