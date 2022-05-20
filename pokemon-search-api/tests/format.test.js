@@ -17,18 +17,6 @@ const mockData = {
   flavor_text_entries: [
     {
       flavor_text:
-        "Spits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally.",
-      language: {
-        name: "en",
-        url: "https://pokeapi.co/api/v2/language/9/",
-      },
-      version: {
-        name: "red",
-        url: "https://pokeapi.co/api/v2/version/1/",
-      },
-    },
-    {
-      flavor_text:
         "On raconte que la flamme du\nDracaufeu s’intensifie après\nun combat difficile.",
       language: {
         name: "fr",
@@ -37,6 +25,18 @@ const mockData = {
       version: {
         name: "black",
         url: "https://pokeapi.co/api/v2/version/17/",
+      },
+    },
+    {
+      flavor_text:
+        "Spits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally.",
+      language: {
+        name: "en",
+        url: "https://pokeapi.co/api/v2/language/9/",
+      },
+      version: {
+        name: "red",
+        url: "https://pokeapi.co/api/v2/version/1/",
       },
     },
   ],
@@ -61,33 +61,6 @@ const mockData = {
   name: "charizard",
 };
 
-const alternativeDescription = [
-  {
-    flavor_text:
-      "Spits fire that\nis hot enough to\nmelt boulders.\fKnown to cause\nforest fires\nunintentionally.",
-    language: {
-      name: "es",
-      url: "https://pokeapi.co/api/v2/language/9/",
-    },
-    version: {
-      name: "red",
-      url: "https://pokeapi.co/api/v2/version/1/",
-    },
-  },
-  {
-    flavor_text:
-      "On raconte que la flamme du\nDracaufeu s’intensifie après\nun combat difficile.",
-    language: {
-      name: "fr",
-      url: "https://pokeapi.co/api/v2/language/5/",
-    },
-    version: {
-      name: "black",
-      url: "https://pokeapi.co/api/v2/version/17/",
-    },
-  },
-];
-
 const formattedData = {
   name: "charizard",
   description:
@@ -103,9 +76,5 @@ describe("API tests", () => {
     expect(
       format.pokemonDescription(mockData.flavor_text_entries)
     ).toStrictEqual(formattedData.description);
-    
-    expect(format.pokemonDescription(alternativeDescription)).toStrictEqual(
-      formattedData.description
-    );
   });
 });

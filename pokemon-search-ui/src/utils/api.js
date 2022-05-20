@@ -2,7 +2,7 @@ const fetchData = async (pokemonId) => {
   const searchData = pokemonId.toLowerCase();
 
   try {
-    const response = await fetch(`http://localhost:5000/pokemon/${searchData}`, {
+    const response = await fetch(`http://localhost:3000/pokemon/${searchData}`, {
       mode: "cors",
     });
     const data = await response.json();

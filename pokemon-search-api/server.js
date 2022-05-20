@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import format from "./format.js";
 
 const app = express();
-const port = 5000;
+const port = 3000;
 
 app.get("/pokemon/:id", (req, res) => {
   const id = req.params.id;
@@ -18,4 +18,4 @@ app.get("/pokemon/:id", (req, res) => {
     .catch((error) => res.send(`Invalid id: ${id} with error: ${error}`));
 });
 
-app.listen(5000, () => console.log(`Listening on http://localhost:${port}/.`));
+app.listen(port, () => console.log(`Listening on http://localhost:${port}/.`));

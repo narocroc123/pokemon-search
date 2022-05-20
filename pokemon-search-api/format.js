@@ -6,9 +6,6 @@ const pokemonDescription = (data) => {
     if (item.language.name === "en") {
       const description = descriptionFormatting(item.flavor_text);
       return description;
-    } else {
-      const description = descriptionFormatting(item.flavor_text);
-      return description;
     }
   }
 };
