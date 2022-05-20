@@ -21,11 +21,19 @@ const preLoadedState = {
 const mockStore = createStore(rootReducer, preLoadedState);
 
 describe("App", () => {
+  const component = (
+    <Provider store={mockStore}>
+      <History />
+    </Provider>
+  );
+
   test("renders App component", () => {
-    render(
-      <Provider store={mockStore}>
-        <History />
-      </Provider>
-    );
+    render(component);
   });
+
+  // test("renders history button", () => {
+  //   const { getByText } = render(component);
+
+  //   expect(getByText("pikachu")).toBeInTheDocument();
+  // });
 });

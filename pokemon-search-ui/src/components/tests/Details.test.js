@@ -12,7 +12,7 @@ const preLoadedState = {
       name: "charizard",
       description:
         "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.",
-      is_legendary: false,
+      is_legendary: true,
     },
   },
   history: ["pikachu", "azelf", "charizard"],
@@ -21,11 +21,35 @@ const preLoadedState = {
 const mockStore = createStore(rootReducer, preLoadedState);
 
 describe("App", () => {
+  const component = (
+    <Provider store={mockStore}>
+      <Details />
+    </Provider>
+  );
+
   test("renders App component", () => {
-    render(
-      <Provider store={mockStore}>
-        <Details />
-      </Provider>
-    );
+    render(component);
+  });
+
+  test("contains pokemon name", () => {
+    const { getByText } = render(component);
+
+    expect(getByText("CHARIZARD")).toBeInTheDocument();
+  });
+
+  test("contains pokemon description", () => {
+    const { getByText } = render(component);
+
+    expect(
+      getByText(
+        "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally."
+      )
+    ).toBeInTheDocument();
+  });
+
+  test("contains pokemon legendary label", () => {
+    const { getByText } = render(component);
+
+    expect(getByText("Legendary!")).toBeInTheDocument();
   });
 });
