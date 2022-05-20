@@ -1,5 +1,6 @@
 # pokemon-search
 Frontend and backend applications for searching pokemon data using the PokeAPI.
+
 ## How to run the application
 Ensure `node` and `yarn` are installed on your local machine using the following guides:
 
@@ -10,6 +11,11 @@ Ensure `node` and `yarn` are installed on your local machine using the following
 Run `yarn install` at the root level of both the `pokemon-search-ui` and `pokemon-search-api` directories.
 
 Once installation is complete, run the api using `yarn run nodemon` then run the ui using `yarn start`.
+
+## How to run the application
+For the React component tests, navigate to the root of the `pokemon-search-ui` directory and run `yarn run tests`.
+
+For the API tests, navigate to the root of the `pokemon-search-api` directory and run `yarn test`.
 
 ## Questions
 
