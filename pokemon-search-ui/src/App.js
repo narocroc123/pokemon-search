@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 import styled from "styled-components";
 
 import Search from "./components/Search.js";
@@ -26,13 +28,13 @@ const HistoryContainer = styled.div`
 `;
 
 const App = () => {
+  const searchResult = useSelector((state) => state.search);
+
   return (
     <>
       <Title>Pokemon Search</Title>
       <Search />
-      <DetailsContainer>
-        <Details />
-      </DetailsContainer>
+      <DetailsContainer>{searchResult.data && <Details />}</DetailsContainer>
       <HistoryContainer>
         <History />
       </HistoryContainer>

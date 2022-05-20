@@ -1,11 +1,5 @@
 import styled from "styled-components";
-
-const dummyData = {
-  name: "azelf",
-  description:
-    "Known as “The Being of Willpower.” It sleeps at the bottom of a lake to keep the world in balance.",
-  is_legendary: true,
-};
+import { useSelector } from "react-redux";
 
 const LegendaryTitle = styled.h1`
   font-style: italic;
@@ -16,10 +10,14 @@ const LegendaryLabel = styled.h3`
 `;
 
 const Details = () => {
-  const name = dummyData.name.toUpperCase();
+  const searchResult = useSelector((state) => state.search);
+
+  const name = searchResult.data.name.toUpperCase();
+  const description = searchResult.data.description;
+
   return (
     <>
-      {dummyData.is_legendary ? (
+      {searchResult.data.is_legendary ? (
         <>
           <LegendaryTitle>{name}</LegendaryTitle>
           <LegendaryLabel>Legendary!</LegendaryLabel>
@@ -27,7 +25,7 @@ const Details = () => {
       ) : (
         <h1>{name}</h1>
       )}
-      <p>{dummyData.description}</p>
+      <p>{description}</p>
     </>
   );
 };

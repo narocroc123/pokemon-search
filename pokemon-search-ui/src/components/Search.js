@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+import { updateSearch, updateHistory } from "../actions/index";
+import { useDispatch } from "react-redux";
+
 import fetchData from "../utils/api";
 import { pokemonArray } from "../utils/pokemon";
 
@@ -35,16 +38,19 @@ const Button = styled.button`
 
 const Search = () => {
   const [searchData, setSearchData] = useState();
+  const dispatch = useDispatch();
 
   const searchQuery = (e) => {
     e.preventDefault();
     setSearchData(e.target.value);
   };
 
-  const sendData = (e) => {
+  const sendData = async (e) => {
     if (pokemonArray.includes(searchData.toLowerCase())) {
       e.preventDefault();
-      fetchData(searchData);
+      const searchResult = await fetchData(searchData);
+      dispatch(updateSearch(searchResult));
+      dispatch(updateHistory(searchResult.name));
       setSearchData("");
     } else {
       alert("This search needs to be for a valid Pokemon");
